@@ -12,10 +12,10 @@
         "request": "launch",
         "name": "Launch Program",
         "runtimeExecutable": "node",
-        "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
+        "runtimeArgs": ["--loader", "ts-node/esm", "./app.ts"],
         "program": "${workspaceFolder}/app.ts",
         "cwd": "${workspaceRoot}",
-        "args": ["app.ts", "--example", "hello"],
+        "args": [],
         "internalConsoleOptions": "openOnSessionStart",
         "skipFiles": ["<node_internals>/**", "node_modules/**"]
       }
