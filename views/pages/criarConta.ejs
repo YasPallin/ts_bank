@@ -1,0 +1,59 @@
+<%- include('../partials/header'); %>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="mt-5">Cadastro Conta
+                        <hr>
+                    </h1>
+                    <form action="/cadastroConta" method="POST">
+                        <div>
+                            <input type="hidden" name="id_cliente" value="<%=descricao_item.id_cliente %>" readonly>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Agência</span>
+                            </div>
+                            <select name="agencia_cliente" id="agencia_cliente">
+                                <option value="001">001</option>
+                                <option value="002">002</option>
+                                <option value="003">003</option>
+                            </select>
+                        </div>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Conta</span>
+                            </div>
+                            <label for="conta_cliente"></label>
+                            <input class="form-control" type="text" id="conta_cliente" name="username" readonly
+                                value="">
+                        </div>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Senha</span>
+                            </div>
+                            <label for="senha"></label>
+                            <input class="form-control" type="password" id="password" name="password"
+                                placeholder="Digite uma Senha" required>
+                        </div>
+                        <button class="btn btn-outline-success mb-5 mt-3" type="submit">Enviar</button>
+                        </tbody>
+                        </table>
+                    </form>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <%- include('../partials/footer'); %>
+
+    <script>
+        $(document).ready(function(){
+           let numero_conta = Math.floor(100000 + Math.random() * 900000); 
+            $('#conta_cliente').val(numero_conta);
+        })
+    </script>

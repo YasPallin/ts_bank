@@ -1,0 +1,60 @@
+<%- include('../partials/header'); %>
+
+
+<main class="container-md">
+	<section class="mb-5">
+		<div class="row">
+			<div class="col-md-6 mr-auto ml-auto">
+				<h1 class="mt-5 mb-5">Transferir</h1>
+				<form action="/transferencia" method="POST">	
+					<div>
+						<input type="text" value="<%=locals.user.username %>" name="username">
+					</div>		
+					<div class="form-group mt-2">
+						<label for="valor_transf"> Valor  </label>
+						<input class="form-control" type="text" name="valor_transf" id="valor_transf" placeholder="Ex: 50.00" required>
+					</div>
+
+					<div class="form-group mt-2">
+						<label for="banco_transf"> Banco </label>
+						<select name="banco_transf" id="banco_transf" class="form-control">
+							<option value="1">SoulBrasil</option>
+							<option value="2">Bradesco</option>
+							<option value="3">Itaú</option>
+							<option value="4">Santander</option>
+							<option value="5">Banco do Brasil</option>
+							<option value="6">Outros</option>
+						</select>
+					</div>
+
+					<div class="form-group mt-2">
+						<label for="agencia_transf"> Agência </label>
+						<input class="form-control" type="text" name="agencia_transf" id="agencia_transf" placeholder="Ex: 0222" required>
+					</div>
+
+					<div class="form-group mt-2">
+						<label for="conta_transf"> Conta </label>
+						<input class="form-control" type="text" name="conta_transf" id="conta_transf" placeholder="Ex: 055936" required>
+					</div>
+
+					<div class="form-group mt-2">
+						<label for="digito_transf"> Dígito </label>
+						<input class="form-control" type="text" name="digito_transf" id="digito_transf" placeholder="Ex: 5">
+					</div>
+
+					<div class="form-group mt-2">
+						<label for="tipo_conta_transf"> Tipo da conta</label>
+						<select name="tipo_conta_transf" id="tipo_conta_transf" class="form-control">
+							<option value="1">Corrente</option>
+							<option value="2">Poupança</option>
+						</select>
+					</div>
+					
+					<button type="submit" class="btn btn-danger mt-3" id="btnTransferir">Transferir</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</main>
+    
+    <%- include('../partials/footer'); %>

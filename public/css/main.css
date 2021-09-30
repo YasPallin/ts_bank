@@ -1,0 +1,22 @@
+/* Retirar as setas dos imput numeros */
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+/* Geral */
+* {
+    font-size: 18px;
+}
+
+.extrato {
+    min-height: 75vh;
+    
+}
+ 
+
+

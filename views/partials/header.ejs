@@ -1,0 +1,68 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>SoulBrasil</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top py-2">
+                <div class="container"><a href="/" class="navbar-brand text-uppercase font-weight-bold">
+
+                    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                        <img
+                            src="img/SoulBrasil.png" alt=""></a>
+                    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                        <ul class="navbar-nav ml-auto ">
+                            <li class="nav-item active"><a href="/"
+                                    class="nav-link text-uppercase font-weight-bold">Home <span
+                                        class="sr-only"></span></a></li>
+                            <% if(locals.user) { %>
+                                <li class="nav-item"><a href="/extrato"
+                                        class="nav-link text-uppercase font-weight-bold">Extrato
+                                        Bancario</a></li>
+                                <li class="nav-item"><a href="/transferencia"
+                                        class="nav-link text-uppercase font-weight-bold mr-5">Transações</a>
+                                </li>
+                                <% } %>
+                                    <% if(locals.user !=null && locals.user.classe==="admin" ) { %>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/register">Usuários</a>
+                                        </li>
+                                        <% } %>
+                                        <% if(locals.user) { %>
+                                            <li class="justify-content-center align-items-center my-3 mt-2 mr-3">
+                                                <h6>Bem vindo,</h6>
+                                                <p class="text-success text-uppercase">
+                                                    <%= locals.user.username %>
+                                                </p>
+                                            </li>
+                                            <div class="justify-content-center align-items-center my-3">
+                                                <a class="btn btn-danger" href="/logout">Logout</a>
+                                            </div>
+                                            <% } else { %>
+                                                <li class="nav-item"><a href="/login"
+                                                        class="nav-link text-uppercase font-weight-bold">login</a>
+                                                </li>
+                                                <% } %>
+
+                                                    <% if(locals.user==null) { %>
+                                                        <li class="nav-item"><a href="/cadastro"
+                                                                class="nav-link text-uppercase font-weight-bold">Cadastre-se
+                                                                aqui</a></li>
+                                                        <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>

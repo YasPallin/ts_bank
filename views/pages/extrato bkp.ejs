@@ -1,0 +1,54 @@
+<%- include('../partials/header'); %>
+
+    <main class="container-md bg-light mt-3 mb-3">
+        <section class="container" id="principal">
+            <div class="row">
+                <div class="col">
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <h1 class="text-center">Extrato</h1>
+                        </div>
+                    </div>
+
+                    <table class="table table-responsive-md table-hover bg-light text-center">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Valor</th>
+                                <th>Banco Destinatário</th>
+                                <th>Agência Destinatário</th>
+                                <th>Conta Destinatário</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (transferenciasLista == "" ){%>
+                                <tr>
+                                    <td colspan="7" class="alert alert-danger">Não há transações anteriores.</td>
+                                </tr>
+                                <%}else{transferenciasLista.forEach(function(transferencia){ %>
+                                    <tr>
+                                        <td>
+                                            <%=transferencia.data_transacao %>
+                                        </td>
+                                        <td>
+                                            <%=transferencia.valor_transacao %>
+                                        </td>
+                                        <td>
+                                            <%=transferencia.banco_transacao %>
+                                        </td>
+                                        <td>
+                                            <%=transferencia.agencia_transacao %>
+                                        </td>
+                                        <td>
+                                            <%=transferencia.conta_transacao %>
+                                        </td>
+                                    </tr>
+                                    <% })} %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer'); %>

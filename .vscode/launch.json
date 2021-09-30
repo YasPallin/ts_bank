@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // MANTER ESTE ARQUIVO COMO TEMPLATE PARA FAZER DEBUG DE TS NO VSCODE
+    // para iniciar sem debug
+    //node --loader ts-node/esm ./app.ts
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "runtimeExecutable": "node",
+        "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
+        "program": "${workspaceFolder}/app.ts",
+        "cwd": "${workspaceRoot}",
+        "args": ["app.ts", "--example", "hello"],
+        "internalConsoleOptions": "openOnSessionStart",
+        "skipFiles": ["<node_internals>/**", "node_modules/**"]
+      }
+    ]
+  }
